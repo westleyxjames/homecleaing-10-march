@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about CleanHome - Your trusted source for expert cleaning tips, guides, and eco-friendly solutions.">
+    <title>About Us - CleanHome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(to bottom right, #eff6ff, var(--color-white), #f0fdf4);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            color: var(--color-gray-600);
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .story-section {
+            padding: 4rem 0;
+        }
+
+        .story-content {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            font-size: 1.125rem;
+            color: var(--color-gray-700);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .values-section {
+            background: var(--color-gray-50);
+            padding: 4rem 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        .team-section {
+            padding: 4rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 9999px;
+            background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-card p {
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        .stats-section {
+            background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
+            color: var(--color-white);
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 767px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .story-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">✨</div>
+                    <div>
+                        <div class="logo-title">CleanHome</div>
+                        <div class="logo-subtitle">Expert Cleaning Tips</div>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="categories.html" class="nav-link">Categories</a>
+                    <a href="about.html" class="nav-link active">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-link-mobile">Home</a>
+                <a href="blog.html" class="nav-link-mobile">Blog</a>
+                <a href="categories.html" class="nav-link-mobile">Categories</a>
+                <a href="about.html" class="nav-link-mobile active">About Us</a>
+                <a href="contact.html" class="nav-link-mobile">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About CleanHome</h1>
+            <p>We're on a mission to make home cleaning easier, more effective, and more sustainable for everyone.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>
+                    CleanHome was founded in 2020 with a simple belief: everyone deserves a clean, healthy home without spending hours on complicated cleaning routines or using harsh chemicals.
+                </p>
+                <p>
+                    What started as a small blog sharing practical cleaning tips has grown into a comprehensive resource trusted by thousands of homeowners, renters, and cleaning professionals worldwide.
+                </p>
+                <p>
+                    Our team of cleaning experts, environmental scientists, and content creators work together to bring you researched, tested, and proven cleaning methods that actually work in real homes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon category-icon blue">🎯</div>
+                    <h3>Practical & Proven</h3>
+                    <p>Every tip we share is tested in real homes. We only recommend methods that actually work.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon category-icon green">🌿</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>We prioritize natural, sustainable cleaning solutions that are safe for your family and the planet.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon category-icon orange">⚡</div>
+                    <h3>Time-Efficient</h3>
+                    <p>We respect your time. Our methods help you achieve better results in less time.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon category-icon cyan">💡</div>
+                    <h3>Expert-Driven</h3>
+                    <p>Our content is created and reviewed by cleaning professionals and industry experts.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon category-icon purple">🤝</div>
+                    <h3>Community-Focused</h3>
+                    <p>We listen to our readers and continuously improve based on your feedback and needs.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon category-icon gray">🔬</div>
+                    <h3>Science-Based</h3>
+                    <p>Our recommendations are backed by research and proven cleaning science.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">The cleaning experts behind CleanHome</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">SJ</div>
+                    <h3>Sarah Johnson</h3>
+                    <p class="role">Founder & Chief Editor</p>
+                    <p>With 15 years of experience in home management and eco-friendly living, Sarah leads our content strategy and ensures every article meets our high standards.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">MC</div>
+                    <h3>Michael Chen</h3>
+                    <p class="role">Senior Cleaning Specialist</p>
+                    <p>A certified professional cleaner with expertise in commercial and residential cleaning, Michael brings practical insights from years of hands-on experience.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">ER</div>
+                    <h3>Emily Rodriguez</h3>
+                    <p class="role">Environmental Scientist</p>
+                    <p>Emily ensures our eco-friendly recommendations are scientifically sound and truly beneficial for both health and the environment.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">DT</div>
+                    <h3>David Thompson</h3>
+                    <p class="role">Content Creator</p>
+                    <p>David transforms complex cleaning science into easy-to-follow guides that anyone can implement in their daily routines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Monthly Readers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Cleaning Guides</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Categories Covered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Reader Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Join Our Community</h2>
+                <p class="section-subtitle">Get expert cleaning tips delivered to your inbox</p>
+            </div>
+            <div class="section-cta">
+                <a href="contact.html" class="btn btn-primary">Get in Touch →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">✨</div>
+                        <div class="logo-title">CleanHome</div>
+                    </a>
+                    <p class="footer-text">
+                        Your trusted source for expert cleaning tips, guides, and eco-friendly solutions for a healthier home.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="categories.html#home-cleaning">Home Cleaning</a></li>
+                        <li><a href="categories.html#kitchen-cleaning">Kitchen Cleaning</a></li>
+                        <li><a href="categories.html#bathroom-cleaning">Bathroom Cleaning</a></li>
+                        <li><a href="categories.html#eco-friendly-cleaning">Eco-Friendly Cleaning</a></li>
+                        <li><a href="categories.html#deep-cleaning">Deep Cleaning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                    <h3 class="footer-heading" style="margin-top: 1.5rem;">Connect</h3>
+                    <div class="social-links">
+                        <a href="mailto:info@cleanhome.com" aria-label="Email">✉️</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> CleanHome. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

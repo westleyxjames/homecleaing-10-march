@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our comprehensive collection of cleaning guides, tips, and expert advice for all your home cleaning needs.">
+    <title>Cleaning Blog - CleanHome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .search-filter-section {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .search-box, .filter-box {
+            position: relative;
+        }
+
+        .search-icon, .filter-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+
+        .search-input, .filter-select {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--color-gray-300);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-input:focus, .filter-select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .active-filters {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #dbeafe;
+            color: var(--color-primary);
+            padding: 0.5rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .filter-tag button {
+            background: none;
+            border: none;
+            color: var(--color-primary);
+            cursor: pointer;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .results-count {
+            color: var(--color-gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .no-results p {
+            color: var(--color-gray-600);
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .clear-filters-btn {
+            color: var(--color-primary);
+            font-weight: 500;
+            cursor: pointer;
+            background: none;
+            border: none;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">✨</div>
+                    <div>
+                        <div class="logo-title">CleanHome</div>
+                        <div class="logo-subtitle">Expert Cleaning Tips</div>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                    <a href="categories.html" class="nav-link">Categories</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-link-mobile">Home</a>
+                <a href="blog.html" class="nav-link-mobile active">Blog</a>
+                <a href="categories.html" class="nav-link-mobile">Categories</a>
+                <a href="about.html" class="nav-link-mobile">About Us</a>
+                <a href="contact.html" class="nav-link-mobile">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="section-gray" style="padding: 3rem 0;">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="section-header">
+                <h1 class="section-title">Cleaning Blog</h1>
+                <p class="section-subtitle">
+                    Practical tips, expert advice, and comprehensive guides for all your cleaning needs
+                </p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="search-filter-section">
+                <div class="filter-grid">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search articles..."
+                        >
+                    </div>
+                    <div class="filter-box">
+                        <span class="filter-icon">🎯</span>
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="active-filters" id="activeFilters"></div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-count" id="resultsCount"></div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blogGrid"></div>
+
+            <!-- No Results -->
+            <div class="no-results hidden" id="noResults">
+                <p>No articles found matching your criteria.</p>
+                <button class="clear-filters-btn" id="clearFiltersBtn">Clear filters</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">✨</div>
+                        <div class="logo-title">CleanHome</div>
+                    </a>
+                    <p class="footer-text">
+                        Your trusted source for expert cleaning tips, guides, and eco-friendly solutions for a healthier home.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="categories.html#home-cleaning">Home Cleaning</a></li>
+                        <li><a href="categories.html#kitchen-cleaning">Kitchen Cleaning</a></li>
+                        <li><a href="categories.html#bathroom-cleaning">Bathroom Cleaning</a></li>
+                        <li><a href="categories.html#eco-friendly-cleaning">Eco-Friendly Cleaning</a></li>
+                        <li><a href="categories.html#deep-cleaning">Deep Cleaning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                    <h3 class="footer-heading" style="margin-top: 1.5rem;">Connect</h3>
+                    <div class="social-links">
+                        <a href="mailto:info@cleanhome.com" aria-label="Email">✉️</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> CleanHome. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Populate category filter
+        const categoryFilter = document.getElementById('categoryFilter');
+        categories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat.name;
+            option.textContent = cat.name;
+            categoryFilter.appendChild(option);
+        });
+
+        // State
+        let filteredPosts = [...blogPosts];
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        // Render posts
+        function renderPosts() {
+            const blogGrid = document.getElementById('blogGrid');
+            const noResults = document.getElementById('noResults');
+            const resultsCount = document.getElementById('resultsCount');
+
+            blogGrid.innerHTML = '';
+
+            if (filteredPosts.length === 0) {
+                blogGrid.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                resultsCount.textContent = 'Showing 0 articles';
+            } else {
+                blogGrid.classList.remove('hidden');
+                noResults.classList.add('hidden');
+                resultsCount.textContent = `Showing ${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''}`;
+
+                filteredPosts.forEach(post => {
+                    const card = createBlogCard(post);
+                    blogGrid.appendChild(card);
+                });
+            }
+
+            renderActiveFilters();
+        }
+
+        // Filter posts
+        function filterPosts() {
+            filteredPosts = blogPosts.filter(post => {
+                const matchesCategory = currentCategory === 'all' || post.category === currentCategory;
+                const matchesSearch = !currentSearch || 
+                    post.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    post.excerpt.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    post.tags.some(tag => tag.toLowerCase().includes(currentSearch.toLowerCase()));
+                
+                return matchesCategory && matchesSearch;
+            });
+
+            renderPosts();
+        }
+
+        // Render active filters
+        function renderActiveFilters() {
+            const activeFilters = document.getElementById('activeFilters');
+            activeFilters.innerHTML = '';
+
+            if (currentCategory !== 'all') {
+                const tag = document.createElement('span');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `
+                    ${currentCategory}
+                    <button onclick="removeFilter('category')">×</button>
+                `;
+                activeFilters.appendChild(tag);
+            }
+
+            if (currentSearch) {
+                const tag = document.createElement('span');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `
+                    Search: "${currentSearch}"
+                    <button onclick="removeFilter('search')">×</button>
+                `;
+                activeFilters.appendChild(tag);
+            }
+        }
+
+        // Remove filter
+        function removeFilter(type) {
+            if (type === 'category') {
+                currentCategory = 'all';
+                document.getElementById('categoryFilter').value = 'all';
+            } else if (type === 'search') {
+                currentSearch = '';
+                document.getElementById('searchInput').value = '';
+            }
+            filterPosts();
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            filterPosts();
+        });
+
+        document.getElementById('categoryFilter').addEventListener('change', (e) => {
+            currentCategory = e.target.value;
+            filterPosts();
+        });
+
+        document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+            currentCategory = 'all';
+            currentSearch = '';
+            document.getElementById('categoryFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            filterPosts();
+        });
+
+        // Initial render
+        renderPosts();
+    </script>
+</body>
+</html>

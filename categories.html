@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our comprehensive cleaning guides organized by categories - from kitchen to eco-friendly cleaning solutions.">
+    <title>Cleaning Categories - CleanHome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .category-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .category-section:last-child {
+            border-bottom: none;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-header-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .category-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-info p {
+            color: var(--color-gray-600);
+        }
+
+        .category-stats {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-gray-100);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            color: var(--color-gray-700);
+            margin-top: 0.5rem;
+        }
+
+        .posts-container {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">✨</div>
+                    <div>
+                        <div class="logo-title">CleanHome</div>
+                        <div class="logo-subtitle">Expert Cleaning Tips</div>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="categories.html" class="nav-link active">Categories</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-link-mobile">Home</a>
+                <a href="blog.html" class="nav-link-mobile">Blog</a>
+                <a href="categories.html" class="nav-link-mobile active">Categories</a>
+                <a href="about.html" class="nav-link-mobile">About Us</a>
+                <a href="contact.html" class="nav-link-mobile">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="section-gray" style="padding: 3rem 0;">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="section-header">
+                <h1 class="section-title">Cleaning Categories</h1>
+                <p class="section-subtitle">
+                    Explore our comprehensive guides organized by room and cleaning type to find exactly what you need
+                </p>
+            </div>
+
+            <!-- Categories with Posts -->
+            <div id="categoriesContainer">
+                <!-- Categories will be loaded by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">✨</div>
+                        <div class="logo-title">CleanHome</div>
+                    </a>
+                    <p class="footer-text">
+                        Your trusted source for expert cleaning tips, guides, and eco-friendly solutions for a healthier home.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="categories.html#home-cleaning">Home Cleaning</a></li>
+                        <li><a href="categories.html#kitchen-cleaning">Kitchen Cleaning</a></li>
+                        <li><a href="categories.html#bathroom-cleaning">Bathroom Cleaning</a></li>
+                        <li><a href="categories.html#eco-friendly-cleaning">Eco-Friendly Cleaning</a></li>
+                        <li><a href="categories.html#deep-cleaning">Deep Cleaning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                    <h3 class="footer-heading" style="margin-top: 1.5rem;">Connect</h3>
+                    <div class="social-links">
+                        <a href="mailto:info@cleanhome.com" aria-label="Email">✉️</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> CleanHome. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        
+        const iconColors = {
+            'Home Cleaning': 'blue',
+            'Kitchen Cleaning': 'orange',
+            'Bathroom Cleaning': 'cyan',
+            'Bedroom Cleaning': 'purple',
+            'Office Cleaning': 'gray',
+            'Eco-Friendly Cleaning': 'green',
+            'Deep Cleaning': 'purple'
+        };
+
+        categories.forEach(category => {
+            // Get posts for this category
+            const categoryPosts = blogPosts.filter(post => post.category === category.name);
+            
+            const categorySection = document.createElement('div');
+            categorySection.className = 'category-section';
+            categorySection.id = category.slug;
+            
+            categorySection.innerHTML = `
+                <div class="category-header">
+                    <div class="category-header-icon category-icon ${iconColors[category.name] || 'blue'}">
+                        ${category.icon}
+                    </div>
+                    <div class="category-info">
+                        <h2>${category.name}</h2>
+                        <p>${category.description}</p>
+                        <div class="category-stats">
+                            📝 ${categoryPosts.length} article${categoryPosts.length !== 1 ? 's' : ''}
+                        </div>
+                    </div>
+                </div>
+                <div class="posts-container">
+                    <div class="blog-grid" id="posts-${category.id}"></div>
+                </div>
+            `;
+            
+            categoriesContainer.appendChild(categorySection);
+            
+            // Add posts to this category
+            const postsGrid = document.getElementById(`posts-${category.id}`);
+            if (categoryPosts.length > 0) {
+                categoryPosts.forEach(post => {
+                    const card = createBlogCard(post);
+                    postsGrid.appendChild(card);
+                });
+            } else {
+                postsGrid.innerHTML = '<p style="color: var(--color-gray-600);">No articles in this category yet. Check back soon!</p>';
+            }
+        });
+    </script>
+</body>
+</html>

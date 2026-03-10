@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read our detailed cleaning guide">
+    <title id="pageTitle">Article - CleanHome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .post-header {
+            position: relative;
+            height: 24rem;
+            background: var(--color-gray-900);
+        }
+
+        .post-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .post-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--color-gray-900), transparent);
+        }
+
+        .post-content-wrapper {
+            max-width: 56rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .post-article {
+            background: var(--color-white);
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-top: -8rem;
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-gray-600);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+
+        .post-badge {
+            display: inline-block;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .post-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            color: var(--color-gray-600);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .post-excerpt {
+            font-size: 1.25rem;
+            color: var(--color-gray-700);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .post-body {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-gray-700);
+            margin-bottom: 2rem;
+        }
+
+        .post-body h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin: 2rem 0 1rem;
+        }
+
+        .post-body h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .post-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-body ul, .post-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .post-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-tags-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-tag {
+            background: var(--color-gray-100);
+            color: var(--color-gray-700);
+            padding: 0.5rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .share-section {
+            border-top: 1px solid var(--color-gray-200);
+            border-bottom: 1px solid var(--color-gray-200);
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .share-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-center: center;
+            font-size: 1.25rem;
+            transition: opacity 0.3s;
+        }
+
+        .share-btn:hover {
+            opacity: 0.8;
+        }
+
+        .author-box {
+            background: var(--color-gray-50);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 9999px;
+            background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .related-posts {
+            padding: 4rem 0;
+        }
+
+        @media (max-width: 767px) {
+            .post-title {
+                font-size: 2rem;
+            }
+
+            .post-article {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">✨</div>
+                    <div>
+                        <div class="logo-title">CleanHome</div>
+                        <div class="logo-subtitle">Expert Cleaning Tips</div>
+                    </div>
+                </a>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                    <a href="categories.html" class="nav-link">Categories</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-link-mobile">Home</a>
+                <a href="blog.html" class="nav-link-mobile active">Blog</a>
+                <a href="categories.html" class="nav-link-mobile">Categories</a>
+                <a href="about.html" class="nav-link-mobile">About Us</a>
+                <a href="contact.html" class="nav-link-mobile">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Post Header -->
+    <div class="post-header" id="postHeader"></div>
+
+    <!-- Post Content -->
+    <div class="post-content-wrapper">
+        <article class="post-article" id="postArticle">
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+            <!-- Content will be loaded by JavaScript -->
+        </article>
+
+        <!-- Related Posts -->
+        <div class="related-posts" id="relatedPosts"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">✨</div>
+                        <div class="logo-title">CleanHome</div>
+                    </a>
+                    <p class="footer-text">
+                        Your trusted source for expert cleaning tips, guides, and eco-friendly solutions for a healthier home.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="categories.html#home-cleaning">Home Cleaning</a></li>
+                        <li><a href="categories.html#kitchen-cleaning">Kitchen Cleaning</a></li>
+                        <li><a href="categories.html#bathroom-cleaning">Bathroom Cleaning</a></li>
+                        <li><a href="categories.html#eco-friendly-cleaning">Eco-Friendly Cleaning</a></li>
+                        <li><a href="categories.html#deep-cleaning">Deep Cleaning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                    <h3 class="footer-heading" style="margin-top: 1.5rem;">Connect</h3>
+                    <div class="social-links">
+                        <a href="mailto:info@cleanhome.com" aria-label="Email">✉️</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> CleanHome. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Get slug from URL
+        const slug = getURLParameter('slug');
+        const post = blogPosts.find(p => p.slug === slug);
+
+        if (!post) {
+            document.getElementById('postArticle').innerHTML = `
+                <div style="text-align: center; padding: 3rem 0;">
+                    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Article Not Found</h1>
+                    <p style="color: var(--color-gray-600); margin-bottom: 2rem;">The article you're looking for doesn't exist.</p>
+                    <a href="blog.html" class="btn btn-primary">← Back to Blog</a>
+                </div>
+            `;
+        } else {
+            // Set page title
+            document.getElementById('pageTitle').textContent = `${post.title} - CleanHome`;
+
+            // Set header image
+            document.getElementById('postHeader').innerHTML = `
+                <img src="${post.image}" alt="${post.title}">
+            `;
+
+            // Format date
+            const formattedDate = formatDate(post.date);
+
+            // Set article content
+            document.getElementById('postArticle').innerHTML = `
+                <a href="blog.html" class="back-link">← Back to Blog</a>
+                
+                <div class="post-badge">${post.category}</div>
+                
+                <h1 class="post-title">${post.title}</h1>
+                
+                <div class="post-meta">
+                    <span>👤 ${post.author}</span>
+                    <span>📅 ${formattedDate}</span>
+                </div>
+                
+                <p class="post-excerpt">${post.excerpt}</p>
+                
+                <div class="post-body">
+                    ${post.content}
+                </div>
+                
+                <div class="post-tags-section">
+                    ${post.tags.map(tag => `<span class="post-tag">#${tag}</span>`).join('')}
+                </div>
+                
+                <div class="share-section">
+                    <div class="share-buttons">
+                        <span style="font-weight: 500;">📤 Share:</span>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" target="_blank" class="share-btn" style="background: #1877f2; color: white;">📘</a>
+                        <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}" target="_blank" class="share-btn" style="background: #1da1f2; color: white;">🐦</a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}" target="_blank" class="share-btn" style="background: #0077b5; color: white;">💼</a>
+                    </div>
+                </div>
+                
+                <div class="author-box">
+                    <div class="author-avatar">${post.author.charAt(0)}</div>
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 0.25rem;">${post.author}</h3>
+                        <p style="color: var(--color-gray-600); font-size: 0.875rem;">Cleaning Expert & Content Creator</p>
+                    </div>
+                </div>
+            `;
+
+            // Load related posts
+            const relatedPosts = blogPosts.filter(p => p.id !== post.id && p.category === post.category).slice(0, 3);
+            
+            if (relatedPosts.length > 0) {
+                const relatedPostsContainer = document.getElementById('relatedPosts');
+                relatedPostsContainer.innerHTML = `
+                    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">Related Articles</h2>
+                    <div class="blog-grid"></div>
+                `;
+                
+                const grid = relatedPostsContainer.querySelector('.blog-grid');
+                relatedPosts.forEach(relatedPost => {
+                    const card = createBlogCard(relatedPost);
+                    grid.appendChild(card);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
